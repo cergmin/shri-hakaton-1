@@ -1,14 +1,14 @@
 // BFS
-const queue = [];
 const bfs = (tree) => {
-    console.log(tree.value);
+    const queue = [tree];
 
-    if (tree.children) {
-        queue.push(...tree.children);
-    }
+    while (queue.length > 0) {
+        const curr = queue.shift();
 
-    if (queue.length > 0) {
-        bfs(queue.shift());
+        console.log(curr.value);
+        if (curr.children) {
+            queue.push(...curr.children);
+        }
     }
 };
 
